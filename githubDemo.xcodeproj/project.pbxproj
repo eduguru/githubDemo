@@ -44,8 +44,10 @@
 		59663903283EA30D008DDF5B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596638ED283EA30D008DDF5B /* UIView.swift */; };
 		59663909283EAF89008DDF5B /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59663907283EAF88008DDF5B /* UsersViewController.swift */; };
 		5966390A283EAF89008DDF5B /* UsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59663908283EAF88008DDF5B /* UsersViewController.xib */; };
-		5966390C283EB0DB008DDF5B /* UsersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5966390B283EB0DB008DDF5B /* UsersCoordinator.swift */; };
 		5966390E283EB0EF008DDF5B /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5966390D283EB0EF008DDF5B /* UsersViewModel.swift */; };
+		59663912283EBBFC008DDF5B /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59663910283EBBFC008DDF5B /* UserTableViewCell.swift */; };
+		59663913283EBBFC008DDF5B /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59663911283EBBFC008DDF5B /* UserTableViewCell.xib */; };
+		59663915283EBE0D008DDF5B /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59663914283EBE0D008DDF5B /* BaseNavigationController.swift */; };
 		EE401BC77C1D03932AB5787D /* Pods_githubDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8C68303D2B858EA9460DA9 /* Pods_githubDemoTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -111,8 +113,10 @@
 		596638ED283EA30D008DDF5B /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		59663907283EAF88008DDF5B /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		59663908283EAF88008DDF5B /* UsersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersViewController.xib; sourceTree = "<group>"; };
-		5966390B283EB0DB008DDF5B /* UsersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCoordinator.swift; sourceTree = "<group>"; };
 		5966390D283EB0EF008DDF5B /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
+		59663910283EBBFC008DDF5B /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		59663911283EBBFC008DDF5B /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		59663914283EBE0D008DDF5B /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		5F43CBBBEFE55BE78B889C65 /* Pods-githubDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-githubDemoTests.release.xcconfig"; path = "Target Support Files/Pods-githubDemoTests/Pods-githubDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		80B0F045302904CC2CC82755 /* Pods_githubDemo_githubDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_githubDemo_githubDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		925B634D72594945985BFA8E /* Pods-githubDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-githubDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-githubDemoTests/Pods-githubDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -274,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				596638D0283EA267008DDF5B /* AppCoordinator.swift */,
+				59663914283EBE0D008DDF5B /* BaseNavigationController.swift */,
 				596638D2283EA267008DDF5B /* Coordinator.swift */,
 				596638D1283EA267008DDF5B /* Storyboarded.swift */,
 				59663896283E838B008DDF5B /* SceneDelegate.swift */,
@@ -354,7 +359,6 @@
 			children = (
 				59663907283EAF88008DDF5B /* UsersViewController.swift */,
 				59663908283EAF88008DDF5B /* UsersViewController.xib */,
-				5966390B283EB0DB008DDF5B /* UsersCoordinator.swift */,
 				5966390D283EB0EF008DDF5B /* UsersViewModel.swift */,
 			);
 			path = Users;
@@ -363,6 +367,8 @@
 		5966390F283EB9E5008DDF5B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				59663910283EBBFC008DDF5B /* UserTableViewCell.swift */,
+				59663911283EBBFC008DDF5B /* UserTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -476,6 +482,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59663913283EBBFC008DDF5B /* UserTableViewCell.xib in Resources */,
 				596638A1283E8390008DDF5B /* LaunchScreen.storyboard in Resources */,
 				5966390A283EAF89008DDF5B /* UsersViewController.xib in Resources */,
 				5966389E283E8390008DDF5B /* Assets.xcassets in Resources */,
@@ -616,7 +623,6 @@
 				596638F3283EA30D008DDF5B /* UIColor.swift in Sources */,
 				596638D3283EA267008DDF5B /* AppCoordinator.swift in Sources */,
 				59663900283EA30D008DDF5B /* CNContact.swift in Sources */,
-				5966390C283EB0DB008DDF5B /* UsersCoordinator.swift in Sources */,
 				596638FA283EA30D008DDF5B /* ImageHelper.swift in Sources */,
 				596638FB283EA30D008DDF5B /* MaterialColors.swift in Sources */,
 				596638F8283EA30D008DDF5B /* NSMutableAttributedString+Extensions.swift in Sources */,
@@ -626,6 +632,7 @@
 				596638FE283EA30D008DDF5B /* MPVolumeView.swift in Sources */,
 				596638EE283EA30D008DDF5B /* UILabel.swift in Sources */,
 				59663909283EAF89008DDF5B /* UsersViewController.swift in Sources */,
+				59663912283EBBFC008DDF5B /* UserTableViewCell.swift in Sources */,
 				596638EF283EA30D008DDF5B /* UIStackView.swift in Sources */,
 				596638D5283EA267008DDF5B /* Coordinator.swift in Sources */,
 				596638D4283EA267008DDF5B /* Storyboarded.swift in Sources */,
@@ -634,6 +641,7 @@
 				596638FF283EA30D008DDF5B /* UIFont.swift in Sources */,
 				59663897283E838B008DDF5B /* SceneDelegate.swift in Sources */,
 				59663903283EA30D008DDF5B /* UIView.swift in Sources */,
+				59663915283EBE0D008DDF5B /* BaseNavigationController.swift in Sources */,
 				596638F4283EA30D008DDF5B /* UIAlertController.swift in Sources */,
 				596638FC283EA30D008DDF5B /* UITableView.swift in Sources */,
 				59663902283EA30D008DDF5B /* UIButton.swift in Sources */,
