@@ -11,6 +11,7 @@
 		354ABF03F8E087915548EA1F /* Pods_githubDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E75FD9650206DAEA9227E6 /* Pods_githubDemo.framework */; };
 		5930386E283F42E90097D23F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5930386D283F42E90097D23F /* UserModel.swift */; };
 		59303870283F5E810097D23F /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5930386F283F5E810097D23F /* UserResponse.swift */; };
+		59303872283F79010097D23F /* UniversalLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59303871283F79000097D23F /* UniversalLoader.swift */; };
 		59663895283E838B008DDF5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59663894283E838B008DDF5B /* AppDelegate.swift */; };
 		59663897283E838B008DDF5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59663896283E838B008DDF5B /* SceneDelegate.swift */; };
 		59663899283E838B008DDF5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59663898283E838B008DDF5B /* ViewController.swift */; };
@@ -78,6 +79,7 @@
 		2DD5F085530C0967E34E97E3 /* Pods-githubDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-githubDemo.release.xcconfig"; path = "Target Support Files/Pods-githubDemo/Pods-githubDemo.release.xcconfig"; sourceTree = "<group>"; };
 		5930386D283F42E90097D23F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		5930386F283F5E810097D23F /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		59303871283F79000097D23F /* UniversalLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalLoader.swift; sourceTree = "<group>"; };
 		59663891283E838B008DDF5B /* githubDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = githubDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59663894283E838B008DDF5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59663896283E838B008DDF5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				596638CD283E9E64008DDF5B /* Services */,
 				596638CC283E9E4D008DDF5B /* Api */,
 				596638CB283E9E3F008DDF5B /* Responses */,
+				59303871283F79000097D23F /* UniversalLoader.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -369,9 +372,9 @@
 		59663906283EAF39008DDF5B /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				5966390D283EB0EF008DDF5B /* UsersViewModel.swift */,
 				59663907283EAF88008DDF5B /* UsersViewController.swift */,
 				59663908283EAF88008DDF5B /* UsersViewController.xib */,
-				5966390D283EB0EF008DDF5B /* UsersViewModel.swift */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -647,6 +650,7 @@
 				596638EE283EA30D008DDF5B /* UILabel.swift in Sources */,
 				59663909283EAF89008DDF5B /* UsersViewController.swift in Sources */,
 				59663912283EBBFC008DDF5B /* UserTableViewCell.swift in Sources */,
+				59303872283F79010097D23F /* UniversalLoader.swift in Sources */,
 				596638EF283EA30D008DDF5B /* UIStackView.swift in Sources */,
 				596638D5283EA267008DDF5B /* Coordinator.swift in Sources */,
 				596638D4283EA267008DDF5B /* Storyboarded.swift in Sources */,

@@ -70,16 +70,18 @@ extension UsersViewController : UITableViewDelegate {
     }
 
     private func getUsers (search: String, page: Int = 1) {
+        UniversalLoader().showUniversalLoadingView(true)
         UsersService().searchUsers(searchText: search, page: page)
             .subscribe(onNext: { response in
                 let array = response.items.map({
                     UserModel(model: $0)
                 })
                 self.arrayList.on(.next(array))
-                print("and we also got a count of \(self.arrayList)")
+                UniversalLoader().showUniversalLoadingView(false)
                 
             }, onError: {error in
-                
+                print(error)
+                UniversalLoader().showUniversalLoadingView(false)
             }, onCompleted: {
                 
             }, onDisposed: {
