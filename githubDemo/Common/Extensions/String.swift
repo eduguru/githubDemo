@@ -167,13 +167,6 @@ extension String {
 }
 
 extension String {
-    func equalIgnoreCase(_ compare:String) -> Bool {
-        return self.uppercased() == compare.uppercased()
-    }
-}
-
-//Swift 4
-extension String {
 
     mutating func toHtmlEncodedString() {
         guard let encodedData = self.data(using: .utf8) else {
@@ -193,12 +186,6 @@ extension String {
             print("Error: \(error)")
         }
     }
-
-}
-
-
-//
-extension String {
     
     func toEnglishNumber() -> String {
         let numberFormatter = NumberFormatter()
@@ -209,5 +196,13 @@ extension String {
         }
         return result.stringValue
     }
+    
+  var URLEscapedString: String {
+      return self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlHostAllowed)!
+  }
+    
+    func equalIgnoreCase(_ compare:String) -> Bool {
+        return self.uppercased() == compare.uppercased()
+    }
+    
 }
-
