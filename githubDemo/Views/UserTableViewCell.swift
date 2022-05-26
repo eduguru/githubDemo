@@ -6,12 +6,26 @@
 //
 
 import UIKit
+import Kingfisher
 
 class UserTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var img_view: UIImageView!
+    @IBOutlet private weak var img_view: UIImageView!
     
-    @IBOutlet weak var lbl_title: UILabel!
+    @IBOutlet private weak var lbl_title: UILabel!
+    
+    static let reUseIdentifier: String = "UserTableViewCell"
+    
+    static func nib() -> UINib {
+        return UINib(nibName: "UserTableViewCell", bundle: nil)
+    }
+    
+    func configure(with model: UserModel) {
+        self.lbl_title.text = model.login
+        
+        let url = URL(string: model.avatar_url)
+        img_view.kf.setImage(with: url)
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

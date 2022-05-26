@@ -13,7 +13,12 @@ class UsersViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.register(UserTableViewCell.nib(), forCellReuseIdentifier: UserTableViewCell.reUseIdentifier)
+            tableView.rowHeight = 80.0
+        }
+    }
     
     var searchActive : Bool = false
     
@@ -27,7 +32,14 @@ class UsersViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         //searchBar.delegate = self
-        
+        addSearchListener()
+        bindTableView()
+    }
+
+}
+
+extension UsersViewController : UITableViewDelegate {
+    private func addSearchListener() {
         searchBar
             .rx.text // Observable property thanks to RxCocoa
             .orEmpty // Make it non-optional
@@ -43,10 +55,20 @@ class UsersViewController: UIViewController {
             })
             .disposed(by: disposeBag)
     }
+    
+    private func bindTableView() {
+        tableView.rx
+            .setDelegate(self)
+            .disposed(by: disposeBag)
+        
+        arrayList.bind(
+            to: tableView.rx.items( cellIdentifier: UserTableViewCell.reUseIdentifier, cellType: UserTableViewCell.self)
+        ) { ( row, item, cell) in
+            cell.configure(with: item)
+        }
+        .disposed(by: disposeBag)
+    }
 
-}
-
-extension UsersViewController {
     private func getUsers (search: String, page: Int = 1) {
         UsersService().searchUsers(searchText: search, page: page)
             .subscribe(onNext: { response in
