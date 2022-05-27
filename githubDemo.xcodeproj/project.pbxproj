@@ -13,6 +13,8 @@
 		59303870283F5E810097D23F /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5930386F283F5E810097D23F /* UserResponse.swift */; };
 		59303872283F79010097D23F /* UniversalLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59303871283F79000097D23F /* UniversalLoader.swift */; };
 		5930387D2840C7310097D23F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5930387C2840C7300097D23F /* BaseViewController.swift */; };
+		59303881284100750097D23F /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5930387F284100750097D23F /* UserDetailsViewController.swift */; };
+		59303882284100750097D23F /* UserDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59303880284100750097D23F /* UserDetailsViewController.xib */; };
 		59663895283E838B008DDF5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59663894283E838B008DDF5B /* AppDelegate.swift */; };
 		59663897283E838B008DDF5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59663896283E838B008DDF5B /* SceneDelegate.swift */; };
 		59663899283E838B008DDF5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59663898283E838B008DDF5B /* ViewController.swift */; };
@@ -82,6 +84,8 @@
 		5930386F283F5E810097D23F /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		59303871283F79000097D23F /* UniversalLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalLoader.swift; sourceTree = "<group>"; };
 		5930387C2840C7300097D23F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		5930387F284100750097D23F /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
+		59303880284100750097D23F /* UserDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailsViewController.xib; sourceTree = "<group>"; };
 		59663891283E838B008DDF5B /* githubDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = githubDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59663894283E838B008DDF5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59663896283E838B008DDF5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -186,6 +190,15 @@
 				5F43CBBBEFE55BE78B889C65 /* Pods-githubDemoTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		5930387E2841004E0097D23F /* details */ = {
+			isa = PBXGroup;
+			children = (
+				5930387F284100750097D23F /* UserDetailsViewController.swift */,
+				59303880284100750097D23F /* UserDetailsViewController.xib */,
+			);
+			path = details;
 			sourceTree = "<group>";
 		};
 		59663888283E838A008DDF5B = {
@@ -375,6 +388,7 @@
 		59663906283EAF39008DDF5B /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				5930387E2841004E0097D23F /* details */,
 				5966390D283EB0EF008DDF5B /* UsersViewModel.swift */,
 				59663907283EAF88008DDF5B /* UsersViewController.swift */,
 				59663908283EAF88008DDF5B /* UsersViewController.xib */,
@@ -500,6 +514,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59303882284100750097D23F /* UserDetailsViewController.xib in Resources */,
 				59663913283EBBFC008DDF5B /* UserTableViewCell.xib in Resources */,
 				596638A1283E8390008DDF5B /* LaunchScreen.storyboard in Resources */,
 				5966390A283EAF89008DDF5B /* UsersViewController.xib in Resources */,
@@ -639,6 +654,7 @@
 				596638F0283EA30D008DDF5B /* UIWindow.swift in Sources */,
 				59663901283EA30D008DDF5B /* UITextField.swift in Sources */,
 				596638F3283EA30D008DDF5B /* UIColor.swift in Sources */,
+				59303881284100750097D23F /* UserDetailsViewController.swift in Sources */,
 				596638D3283EA267008DDF5B /* AppCoordinator.swift in Sources */,
 				59663900283EA30D008DDF5B /* CNContact.swift in Sources */,
 				596638FA283EA30D008DDF5B /* ImageHelper.swift in Sources */,

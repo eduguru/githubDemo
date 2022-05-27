@@ -60,7 +60,7 @@ extension SceneDelegate {
     private func setupCoordinator() {
         window?.resignKey()
         let navController = BaseNavigationController()
-        navController.setNavigationBarHidden(true, animated: false)
+        navController.setNavigationBarHidden(false, animated: false)
 
         coordinator = AppCoordinator(navigationController: navController, completion: nil)
         coordinator?.start()

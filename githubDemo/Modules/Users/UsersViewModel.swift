@@ -12,8 +12,9 @@ class UsersViewModel: NSObject {
     private let disposeBag = DisposeBag()
     
     var arrayList = BehaviorSubject(value: [UserModel]())
-    
+    private var state: State
     override init() {
+        state = State()
         super.init()
     }
     
@@ -24,6 +25,8 @@ class UsersViewModel: NSObject {
                 let array = response.items.map({
                     UserModel(model: $0)
                 })
+                
+                self.state.users = array
                 self.arrayList.on(.next(array))
                 UniversalLoader().showUniversalLoadingView(false)
                 
@@ -36,5 +39,10 @@ class UsersViewModel: NSObject {
                 
             })
             .disposed(by: disposeBag)
+    }
+    
+    private struct State {
+        var users: [UserModel]?
+        var selectedUser: UserModel?
     }
 }

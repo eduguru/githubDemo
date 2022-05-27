@@ -13,6 +13,7 @@ struct UserModel: Codable {
     var login: String
     var node_id: String
     var avatar_url: String
+    var html_url: String
     var score: Double
     
     init(model: Item) {
@@ -20,6 +21,7 @@ struct UserModel: Codable {
         self.login = model.login
         self.node_id = model.node_id
         self.avatar_url = model.avatar_url
+        self.html_url = model.html_url
         self.score = model.score
     }
 }

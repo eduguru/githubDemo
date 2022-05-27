@@ -77,5 +77,11 @@ extension UsersViewController : UITableViewDelegate {
             cell.configure(with: item)
         }
         .disposed(by: disposeBag)
+        
+        tableView.rx.modelSelected(UserModel.self)
+            .subscribe(onNext: { [weak self] item in
+                self?.didSelect(item)
+            })
+            .disposed(by: disposeBag)
     }
 }

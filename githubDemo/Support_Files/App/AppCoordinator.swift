@@ -17,10 +17,19 @@ final class AppCoordinator: Coordinator {
         let vc = UsersViewController(viewModel: viewModel)
         
         vc.search = { [weak self] search, page in
-            print(search, page)
             viewModel.getUsers(search: search, page: page)
         }
+        
+        vc.didSelect = showUserDetails(_:)
 
+        push(viewController: vc)
+    }
+    
+    private func showUserDetails(_ selected: UserModel) {
+        let viewModel = UsersViewModel()
+        let vc = UserDetailsViewController(viewModel: viewModel)
+        vc.selectedItem = selected
+        
         push(viewController: vc)
     }
 }
