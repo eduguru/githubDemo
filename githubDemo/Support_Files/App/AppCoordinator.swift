@@ -13,7 +13,13 @@ final class AppCoordinator: Coordinator {
     }
 
     private func goToApp() {
-        let vc = UsersViewController()
+        let viewModel = UsersViewModel()
+        let vc = UsersViewController(viewModel: viewModel)
+        
+        vc.search = { [weak self] search, page in
+            print(search, page)
+            viewModel.getUsers(search: search, page: page)
+        }
 
         push(viewController: vc)
     }
