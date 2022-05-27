@@ -10,10 +10,14 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
+    private var coordinator: AppCoordinator?
+    private let blurView = UIVisualEffectView()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        setupCoordinator(application)
+        
         return true
     }
 
@@ -34,3 +38,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate {
+    private func setupCoordinator(_ application: UIApplication) {
+        var window = application.windows.first(where: { $0.isKeyWindow })
+        window?.resignKey()
+        let navController = BaseNavigationController()
+        navController.setNavigationBarHidden(false, animated: false)
+
+        coordinator = AppCoordinator(navigationController: navController, completion: nil)
+        coordinator?.start()
+
+        window = nil
+
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = navController
+        window?.backgroundColor = .white
+        window?.makeKeyAndVisible()
+
+        self.window = window
+    }
+}

@@ -1,8 +1,7 @@
 //
 //  Storyboarded.swift
-//  Urban Cribs
 //
-//  Created by Edwin Weru on 05/05/2022.
+//  Created by Edwin Weru
 //
 
 import UIKit

@@ -1,33 +1,35 @@
 //
 //  AppCoordinator.swift
-//  Urban Cribs
 //
-//  Created by Edwin Weru on 05/05/2022.
+//  Created by Edwin Weru
 //
 
 import UIKit
 
 final class AppCoordinator: Coordinator {
-    private var logoutObserver: NSObjectProtocol?
 
     override func start() {
-        goToSplash()
+        goToApp()
     }
 
     private func goToApp() {
-    }
-
-    private func forceLogout(_ coordinator: Coordinator) {
-        navigationController?.dismiss(animated: true) {
-            coordinator.finishWorkflow()
-            self.goToApp()
+        let viewModel = UsersViewModel()
+        let vc = UsersViewController(viewModel: viewModel)
+        
+        vc.search = { [weak self] search, page in
+            viewModel.getUsers(search: search, page: page)
         }
+        
+        vc.didSelect = showUserDetails(_:)
+
+        push(viewController: vc)
     }
-
-    private func goToSplash() {
-        //let splashScreen = SplashViewController()
-        //splashScreen.goToApp = goToApp
-
-        //push(viewController: splashScreen)
+    
+    private func showUserDetails(_ selected: UserModel) {
+        let viewModel = UsersViewModel()
+        let vc = UserDetailsViewController(viewModel: viewModel)
+        vc.selectedItem = selected
+        
+        push(viewController: vc)
     }
 }
